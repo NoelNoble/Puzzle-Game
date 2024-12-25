@@ -1,0 +1,101 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    animation: gradientShift 6s infinite alternate;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    background: -webkit-linear-gradient(#7e82ff, #067e48);
+
+}t
+
+.challenge-display {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    word-wrap: break-word; /* To handle long encoded strings */
+    white-space: pre-wrap;
+}
+
+@keyframes pulseGlow {
+    0% { text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); }
+    100% { text-shadow: 0px 0px 20px rgba(255, 255, 255, 1); }
+}
+
+.input-field {
+    padding: 15px;
+    font-size: 1em;
+    width: 80%;
+    border: 2px solid #555;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s;
+}
+
+.input-field:focus {
+    border-color: #fa5b77;
+}
+
+button {
+    background-color: #ff758c;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 117, 140, 0.5);
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #e04b66;
+}
+
+.feedback {
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+
+.feedback.correct {
+    color: lime;
+    animation: glow 1.5s infinite alternate;
+}
+
+.feedback.incorrect {
+    color: red;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0px 0px 5px lime; }
+    100% { text-shadow: 0px 0px 15px lime; }
+}
