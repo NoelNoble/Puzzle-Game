@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found</title>
+  <link href="https://fonts.googleapis.com/css2?family=Boogey&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <h1>Oops! 404</h1>
+      <p>We can't seem to find the page you're looking for.</p>
+      
+      <div class="button-container">
+        <a href="#" id="findMoreButton" class="find-more-button">Find Out More</a>
+      </div>
+      
+      <div id="decodeMessage" class="decode-message"></div>
+    </div>
+  </div>
+
+  <!-- Console log hint -->
+  <script>
+    document.getElementById('findMoreButton').addEventListener('click', function() {
+      var button = document.getElementById('findMoreButton');
+      button.textContent = 'Fetching Data...'; // Change the button text
+      document.getElementById('decodeMessage').innerHTML = `
+        <p><strong>System Log: 5014</strong></p>
+        <p><code>Vg uif gftu tuz qmf!</code></p>
+      `;
+      document.getElementById('decodeMessage').style.display = 'block'; // Make the decode message visible
+      button.style.display = 'none'; // Hide the button after clicking
+    });
+
+    console.log("Hint: Hidden in plain sight.");
+  </script>
+</body>
+</html>
