@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riddle Me This!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1 class="title">Riddle Me This!</h1>
+        <p class="intro">Solve the riddle and move to the next stage!</p>
+    </header>
+    
+    <section class="riddle-section">
+        <div class="question">
+            <p class="riddle-text">I speak without a mouth and hear without ears. What am I?</p>
+        </div>
+        
+        <input type="text" id="answer" class="answer-input" placeholder="Enter your answer here...">
+        <button id="submit-btn" class="submit-btn">Submit</button>
+        <div id="feedback" class="feedback"></div>
+    </section>
+    
+    <section class="celebration-section" id="celebration" style="display: none;">
+        <p class="congrats-message">🎉 You got it right! The answer is Echo! 🎉</p>
+        <p class="encoded-message">Here’s your next step:</p>
+        <p id="encoded-code" class="encoded-code">U29sdmUgdGhpcyBzZWFyY2ggYW5kIHlvdSBnb3QgYSBzZXJpb3VzIGNvbWwb9hyayFg==</p> <!-- Base64 encoded string -->
+    </section>
+    
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
