@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Brain Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Ultimate Brain Challenge</h1>
+        <div id="question-container">
+            <p id="question-text">What is the capital of Australia?</p>
+            <input type="text" id="answer" placeholder="Type your answer...">
+            <button id="submit-btn">Submit</button>
+        </div>
+        <div id="result" class="hidden">
+            <p id="result-text"></p>
+            <button id="retry-btn" class="hidden">Try Again</button>
+        </div>
+        <div id="final-code" class="hidden">
+            <h2>Congratulations! Here is your final code:</h2>
+            <p id="code"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
