@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mysterious Password Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-shape"></div>
+<div class="bg-shape"></div>
+<div class="bg-shape"></div>
+<div class="bg-shape"></div>
+<div class="bg-shape"></div>
+
+<div class="container">
+    <h1>Enter the Secret Code... Maybe?</h1>
+    <input type="password" id="password" placeholder="Password">
+    <div class="hint" id="hint">Psst... I think you already know what it is, don’t you?</div>
+    <div class="reveal" id="encodedMessage">Encoded Message: aHR0cHM6Ly93d3cubmV4dHN0ZXBjbHVlLmNvbQ==</div>
+    <div class="error-message" id="errorMessage">Oops! That’s not right. Try again! 😜</div>
+</div>
+
+<script>
+    const passwordField = document.getElementById('password');
+    const revealMessage = document.getElementById('encodedMessage');
+    const hint = document.getElementById('hint');
+    const errorMessage = document.getElementById('errorMessage');
+    const correctPassword = "5094"; // Password to reveal the encoded message
+
+    passwordField.addEventListener('input', function() {
+        const inputPassword = passwordField.value.trim();
+
+        if (inputPassword === correctPassword) {
+            revealMessage.style.display = 'block';
+            errorMessage.style.display = 'none';  // Hide error message when correct password is entered
+            hint.textContent = "Well done, you’ve cracked the code! 🎉";
+        } else {
+            revealMessage.style.display = 'none';
+            if (inputPassword.length > 0) {
+                errorMessage.style.display = 'block';  // Show error message when password is wrong
+                hint.textContent = "Psst... I think you already know what it is, don’t you? 👀";
+            } else {
+                errorMessage.style.display = 'none';  // Hide error message when field is empty
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
