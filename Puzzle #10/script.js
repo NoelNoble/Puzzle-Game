@@ -1,13 +1,13 @@
 console.log("JavaScript loaded successfully!");
 
 const challenges = [
-    { code: "1. U3RhcnQgd2l0aCB0aGUgZmlyc3Q=", answer: "Start with the first" },
-    { code: "2. V2VsY29tZSB0byBjaGFsbGVuZ2UgdHdv", answer: "Welcome to challenge two" },
-    { code: "3. VGhlIHRocmVlIHBhdGggYmVnaW5z", answer: "The three path begins" },
-    { code: "4. Rm91ciBzdGVwcyB0byBnbw==", answer: "Four steps to go" },
+    { code: "1. U3RhcnQgd2l0aCB0aGUgZmlyc3QK", answer: "Start with the first" },
+    { code: "2. U3RhcnQgd2l0aCB0aGUgZmlyc3QK", answer: "Welcome to challenge two" },
+    { code: "3. VGhlIHRoaXJkIHBhdGggYmVnaW5zCg==", answer: "The third path begins" },
+    { code: "4. Rm91ciBzdGVwcyB0byBnbwo=", answer: "Four steps to go" },
     { code: "5. RmlmdGggY2hhbGxlbmdl", answer: "Fifth challenge" },
     { code: "6. U2l4dGggdHJpYWxzIGF3YWl0", answer: "Sixth trials await" },
-    { code: "7. U2V2ZW50aCBvZiBxdWVzdGlvbnM=", answer: "Seventh of questions" },
+    { code: "7. U2l4dGggdHJpYWxzIGF3YWl0", answer: "Seventh of questions" },
     { code: "8. RWlnaHRoIGlzIHRoZSBtYXN0ZXI=", answer: "Eighth is the master" },
     { code: "9. TmluZXRoIG9mIHRoZSBjbGltYXg=", answer: "Nineth of the climax" },
     { code: "10. VGhlIGZpbmFsIHN0ZXA=", answer: "The final step" }
@@ -68,7 +68,7 @@ function nextChallenge() {
     } else {
         // Show the final question
         challengeDisplay.textContent = "Final Question: What is the secret password?";
-        feedback.textContent = "All the clues lead to the final password!";
+        feedback.textContent = "The Final Answer Involves Me";
         feedback.classList.add("correct");
         inputField.style.display = "none"; // Hide the previous input field
         finalQuestionSection.style.display = "block"; // Show the final question section
@@ -80,7 +80,7 @@ function nextChallenge() {
 // Check the final password
 function checkFinalPassword() {
     const finalPassword = finalInputField.value.trim();
-    if (finalPassword === "TheSecretPassword") {
+    if (finalPassword === "noel") {
         feedback.textContent = "Congratulations! You've unlocked the final secret!";
         feedback.classList.add("correct");
         setTimeout(() => {
