@@ -28,8 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateQuestion() {
         questionText.textContent = questions[currentQuestion].question;
-        answerInput.value = ""; // Clear previous input
+        answerInput.value = ""; // Clear input
+        answerInput.focus(); // Keep input active
         resultContainer.classList.add("hidden");
+        retryBtn.classList.add("hidden"); // Hide retry button after successful answer
     }
 
     function checkAnswer() {
@@ -49,22 +51,21 @@ document.addEventListener("DOMContentLoaded", function () {
             userAnswers.push(false);
             resultText.textContent = "Incorrect answer! Try again.";
             resultContainer.classList.remove("hidden");
-            retryBtn.classList.remove("hidden");
+            retryBtn.classList.remove("hidden"); // Show retry button only on incorrect
         }
     }
 
     function resetGame() {
-        currentQuestion = 0;
-        userAnswers = [];
-        updateQuestion();
+        // Allow retrying the same question instead of restarting
+        answerInput.value = "";
+        answerInput.focus();
         resultContainer.classList.add("hidden");
         retryBtn.classList.add("hidden");
-        finalCodeContainer.classList.add("hidden");
     }
 
     function showFinalCode() {
         finalCodeContainer.classList.remove("hidden");
-        finalCodeContainer.innerHTML = "<p>Congratulations! You completed the quiz.</p>";
+        finalCodeContainer.innerHTML = "<p>🎉 Congratulations! You completed the quiz.</p>";
     }
 
     // Load the first question
