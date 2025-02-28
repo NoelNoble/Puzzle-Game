@@ -24,14 +24,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const finalCodeContainer = document.getElementById("final-code");
 
     submitBtn.addEventListener("click", checkAnswer);
-    retryBtn.addEventListener("click", resetGame);
+    retryBtn.addEventListener("click", resetTry);
 
     function updateQuestion() {
         questionText.textContent = questions[currentQuestion].question;
         answerInput.value = ""; // Clear input
         answerInput.focus(); // Keep input active
-        resultContainer.classList.add("hidden");
-        retryBtn.classList.add("hidden"); // Hide retry button after successful answer
+        resultContainer.classList.add("hidden"); // Hide result message on new question
+        retryBtn.classList.add("hidden"); // Hide retry button
     }
 
     function checkAnswer() {
@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const correctAnswers = questions[currentQuestion].answer;
 
         if (correctAnswers.includes(userAnswer)) {
+            // ✅ Correct Answer: Move to next question
             userAnswers.push(true);
             currentQuestion++;
 
@@ -48,19 +49,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 showFinalCode();
             }
         } else {
+            // ❌ Incorrect Answer: Show "Try Again" message
             userAnswers.push(false);
-            resultText.textContent = "Incorrect answer! Try again.";
+            resultText.textContent = "❌ Incorrect answer! Try again.";
             resultContainer.classList.remove("hidden");
-            retryBtn.classList.remove("hidden"); // Show retry button only on incorrect
+            retryBtn.classList.remove("hidden"); // Show retry button
         }
     }
 
-    function resetGame() {
-        // Allow retrying the same question instead of restarting
+    function resetTry() {
+        // Just clear the input field and allow retrying the same question
         answerInput.value = "";
         answerInput.focus();
         resultContainer.classList.add("hidden");
-        retryBtn.classList.add("hidden");
+        retryBtn.classList.add("hidden"); // Hide retry button on retry attempt
     }
 
     function showFinalCode() {
